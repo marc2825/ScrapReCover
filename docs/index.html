@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[SCF '25] ScrapReCover (Project Page)</title>
+    <meta name="description" content="[SCF '25] ScrapReCover: ScrapReCover is an interactive tool for designing freeform patchwork layouts from fabric scraps.">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('jp')">JP</button>
+    </div>
+
+    <div class="container">
+        <h1>ScrapReCover: An Interactive Optimization System for Freeform Patchwork Layouts</h1>
+
+        <div class="authors">
+            <span class="en-text"><strong>Masahiro Kono</strong>, Maria Larsson, I-Chao Shen, Takeo Igarashi</span>
+            <span class="jp-text"><strong>河野 将大</strong>, Larsson Maria, Shen I-Chao, 五十嵐 健夫</span>
+        </div>
+        <div class="affiliations">
+            <span class="en-text">The University of Tokyo </span>
+            <span class="jp-text">東京大学</span>
+        </div>
+        <div class="conference">
+            SCF '25: ACM Symposium on Computational Fabrication (Full Conference Paper)
+        </div>
+        <div class="conference conference-secondary">
+            & WISS '25: Workshop on Interactive Systems and Software (Demo Presentation)
+        </div>
+
+        <div class="link-block">
+            <a href="https://dl.acm.org/doi/10.1145/3745778.3766653" class="btn"><i class="fas fa-book"></i> <span class="en-text">ACM Library</span><span class="jp-text">ACM公式</span></a>
+            <a href="assets/ScrapReCover_Paper_SCF25.pdf" class="btn"><i class="fas fa-file-pdf"></i> <span class="en-text">Paper (Full/EN)</span><span class="jp-text">論文（フル/英）</span></a>
+            <a href="https://www.wiss.org/WISS2025Proceedings/data/demo/3-A01.pdf" class="btn"><i class="fas fa-file-pdf"></i> <span class="en-text">Paper (Short/JP)</span><span class="jp-text">論文（ショート/日）</span></a>
+            <a href="assets/ScrapReCover_Video.mp4" class="btn"><i class="fas fa-video"></i> <span class="en-text">Demo Video</span><span class="jp-text">デモ動画</span></a>
+            <a href="https://github.com/marc2825/ScrapReCover" class="btn"><i class="fab fa-github"></i> <span class="en-text">Code</span><span class="jp-text">コード</span></a>
+            <a href="assets/ScrapReCover_Presentation.pptx" class="btn"><i class="fas fa-desktop"></i> <span class="en-text">Slides</span><span class="jp-text">発表資料</span></a>
+        </div>
+
+        <img src="images/teaser.png" alt="Teaser">
+        <p class="caption">
+            <span class="en-text"><strong>ScrapReCover</strong> is an interactive tool for designing freeform patchwork layouts from fabric scraps. (a) Users begin by loading the scraps they wish to reuse. (b) Using ScrapReCover, they can iteratively refine the layout by combining manual adjustments of individual scraps with automatic placement suggestions guided by intuitive parameters. For automatic suggestions, the system arranges scraps within the target area, following an optimization strategy that minimizes material waste while ensuring complete coverage. (c) Finally, the resulting layout can be fabricated into a unique (collage-like) patchwork product.</span>
+            <span class="jp-text"><strong>ScrapReCover</strong> は、不要になった端切れ（布の切れ端）から自由形状のパッチワークレイアウトを設計するためのインタラクティブなツールです。(a) ユーザーはまず、再利用したい端切れを読み込むことから始めます。(b) ScrapReCoverを使用することで、ユーザーは個々の端切れの手動調整と、直感的なパラメータに基づく自動配置提案を組み合わせながら、レイアウトを反復的に洗練させることができます。この自動提案において、システムは、対象領域（型紙）の完全被覆を保証しつつ材料の無駄を最小限に抑えるという最適化戦略に従って、領域内に端切れを配置します。(c) 結果として得られたレイアウトは、コラージュアートを想起させるような、独特なパッチワーク作品として製作することができます。</span>
+        </p>
+
+        <div class="content-block">
+            <h2><span class="en-text">Abstract</span><span class="jp-text">概要</span></h2>
+            <p class="en-text" style="text-align: justify;">
+                We present ScrapReCover, an interactive tool for designing freeform patchwork layouts from small leftover fabric scraps. The system enables users to iteratively refine the layout by combining manual adjustments of individual scraps with automatic placement suggestions guided by user-controlled parameters. These parameters can be intuitively adjusted to control the degree of modification from the current layout and to prioritize specific types of scraps. For automatic suggestions, the system generates layouts by arranging arbitrarily shaped scraps within the target area, using an optimization strategy that minimizes material waste while ensuring complete coverage. To achieve this functionality, ScrapReCover employs simulated annealing (SA), a robust metaheuristic and stochastic algorithm known for its effectiveness in packing-like problems, integrated with a rasterized representation of both scraps and pattern shapes. The usability of the system was validated through a user study in which 21 participants interactively generated layouts and fabricated patchworks from their own scraps. Additionally, the optimization method was evaluated by baseline comparisons which demonstrate that our approach outperforms other naive methods.
+            </p>
+            <p class="jp-text" style="text-align: justify;">
+                本研究では, 任意形状の布切れを用いた自由形パッチワークのレイアウト制作を支援するインタラクティブなデザインツー「ScrapReCover」を提案する. 本システムは, ユーザーによる手動調整と, 配置の変更度合いや布切れの優先度などの直感的なパラメータに基づく自動配置提案とを組み合わせることで, 反復的なレイアウトの洗練を可能にしている. 自動配置の問題設定は, 任意形状の布切れ（小さな多角形集合）が対象領域（大きな多角形）を完全被覆する幾何学的被覆問題として定式化されており, 問題を適切に離散化したうえでメタヒューリスティックな乱択アルゴリズム「焼きなまし法」を適用することで, 効率的な最適化を実現している. 21 名の参加者によるユーザースタディでは, 各自が持参した布切れを用いて自由にレイアウトを設計し, 希望者には実際に縫製も行ってもらうことで, 本システムの実用性を確認した. 加えて, 我々の最適化アルゴリズムが, ナイーブな手法よりも定量的に優れていることも確認された.
+            </p>
+        </div>
+
+        <div class="content-block">
+            <h2><span class="en-text">Demo Video</span><span class="jp-text">デモ動画</span></h2>
+            <div class="video-container">
+                <iframe src="assets/ScrapReCover_Video.mp4" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h2><span class="en-text">Proposed System: ScrapReCover</span><span class="jp-text">提案システム：「ScrapReCover」</span></h2>
+            
+            <p class="en-text">ScrapReCover allows users to design patchwork layouts through a combination of manual manipulation and algorithm-assisted optimization.</p>
+            <p class="jp-text">ScrapReCoverは、直感的なGUIを通じて「手動操作」と「計算機による最適化」をシームレスに行き来できるデザイン環境を提供します。</p>
+
+            <img src="PATH_TO_UI_PREVIEW.jpg" alt="UI Overview">
+            <p class="caption">
+                <span class="en-text"><strong>Figure 1: The User Interface.</strong> Visualizing layout workspace, unplaced scrap list, and control panels.</span>
+                <span class="jp-text"><strong>図1：システムUIの概要。</strong> レイアウト作業領域、未配置布リスト、最適化制御パネル等で構成される。</span>
+            </p>
+
+            <h3><span class="en-text">"Hybrid Workflow" to Iteratively Refine The Layout</span><span class="jp-text">レイアウトを徐々に洗練させるためのハイブリッド操作</span></h3>
+            <div class="grid-2">
+                <div class="grid-item">
+                    <img src="PATH_TO_OPTIMIZATION.gif" alt="Auto">
+                    <p>
+                        <span class="en-text"><strong>Automatic Suggestion via Optimization</strong><br>Automatically packs scraps to minimize gaps.</span>
+                        <span class="jp-text"><strong>最適化による自動提案</strong><br>SAを用いて隙間や重なりを最小化。</span>
+                    </p>
+                </div>
+
+                <div class="grid-item">
+                    <img src="PATH_TO_MANUAL_OPS.gif" alt="Manual">
+                    <p>
+                        <span class="en-text"><strong>Manual Adjustments</strong><br>Drag, rotate, delete, and lock scraps manually.</span>
+                        <span class="jp-text"><strong>手動調整</strong><br>移動・回転・削除・固定等の手動操作。</span>
+                    </p>
+                </div>
+            </div>
+
+            <h3><span class="en-text">User-Controlled Sliders to Guide The Optimization</span><span class="jp-text">最適化の方向性を制御可能なスライダー</span></h3>
+            <div class="grid-3">
+                <div class="grid-item">
+                    <img src="PATH_TO_CHANGE_RATE_SLIDER.gif" alt="Change Rate">
+                    <p>
+                        <span class="en-text"><strong>Change Rate</strong><br>Controls degree of modification.</span>
+                        <span class="jp-text"><strong>変更度合い</strong><br>レイアウトの変更量を制御。</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <img src="PATH_TO_REG_SHAPE_PREF_SLIDER.gif" alt="Shape Pref">
+                    <p>
+                        <span class="en-text"><strong>Shape Preference</strong><br>Prioritizes rectangular vs. irregular shapes.</span>
+                        <span class="jp-text"><strong>形状優先度</strong><br>矩形または不規則形状を優先。</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <img src="PATH_TO_SELECTION_PRIORITY.gif" alt="Priority">
+                    <p>
+                        <span class="en-text"><strong>Selection Priority</strong><br>Adjusts probability for specific fabrics.</span>
+                        <span class="jp-text"><strong>選択確率</strong><br>特定の布が選ばれる確率を調整。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h2><span class="en-text">Fabricated Results</span><span class="jp-text">実制作例</span></h2>
+            <p>
+                <span class="en-text">Some participants in our user study designed layouts using ScrapReCover (top) and subsequently fabricated a tote bag in real based on their designs (bottom).</span>
+                <span class="jp-text">ユーザスタディにおいて、参加者が持参した布切れを用いて制作した30×30cmのトートバッグの例です。</span>
+            </p>
+            <img src="images/results.png" alt="Results">
+        </div>
+
+        <div class="content-block">
+            <h2>Citation</h2>
+            <pre><code>@inproceedings{kono2025scraprecover,
+  title={ScrapReCover: An Interactive Optimization System for Freeform Patchwork Layouts},
+  author={Kono, Masahiro and Larsson, Maria and Shen, I-Chao and Igarashi, Takeo},
+  booktitle={Proceedings of the ACM Symposium on Computational Fabrication},
+  pages={1--15},
+  year={2025}
+}</code></pre>
+        </div>
+
+        <footer>
+            <p>Contact: marckono2825@g.ecc.u-tokyo.ac.jp</p>
+            <p>&copy; 2025 Masahiro Kono (Marc) / The University of Tokyo</p>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
