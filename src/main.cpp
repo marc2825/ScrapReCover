@@ -1,3 +1,5 @@
+#include <string>
+
 #include <Siv3D.hpp>
 
 #include "algorithm/hyperparameter.hpp"
@@ -8,14 +10,14 @@
 
 
 void Main() {
-    Config::LoadConfig("../assets/config.json"); // pwdからの相対位置->変える
     CanvasModel &model = CanvasModel::Get();
+    UIManager ui(model);
+
+    const std::string config_path = "../assets/config.json";
+    Config::LoadConfig(config_path);
+    Hyperparameter::LoadFromConfig();
     model.GetRngOpt().seed(Config::GetSeed0());
     model.GetRngShapeGen().seed(Config::GetSeed1());
-    Hyperparameter::LoadFromConfig();
-
-    UIManager ui(model);
-    MyPolygon::Initialize();
 
     while (System::Update()) {
         ui.SetMouseInfo(Cursor::Pos(), Mouse::Wheel());

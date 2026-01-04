@@ -1,0 +1,10 @@
+venv/
+*.pyc
+__pycache__/
+src/ui/measure_scrap/__pycache__/
+.vscode/
+build/
+Siv3DApp
+input_scraps/cropper_outputs/
+input_scraps/cropper_temp/
+LayoutExports

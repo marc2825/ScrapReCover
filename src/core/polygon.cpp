@@ -56,9 +56,6 @@ void MyPolygon::SetSelectionPriority(double weight) {
     CalcSelectionWeight();
 }
 
-void MyPolygon::Initialize() {
-}
-
 void MyPolygon::CalcSelectionWeight() {
     selection_weight_ = selection_priority_ * (pow(rect_similarity_, regular_shape_preference_));
 }

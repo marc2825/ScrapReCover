@@ -85,10 +85,6 @@ class Config {
         static inline int GetButtonHeight() { return config_data_["button"]["height"].get<int>(); }
         static inline int GetButtonMargin() { return config_data_["button"]["margin"].get<int>(); }
     
-        static inline std::string GetInitializeMode() { return config_data_["initialize"]["mode"].get<std::string>(); }
-        static inline float GetInitializeSleepTime() { return config_data_["initialize"]["sleep_time"].get<float>(); } 
-    
-        static inline int GetOptMaxIter() { return config_data_["hyperparameter"]["maxiter"].get<int>(); }
         static inline int GetOptSteps() { return config_data_["hyperparameter"]["steps"].get<int>(); }
         static std::array<double, 5> GetHyperparameterP();
         static std::array<double, 5> GetHyperparameterNoP();

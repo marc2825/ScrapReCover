@@ -44,7 +44,6 @@ class MyPolygon {
         const Polygon& GetOriginalPolygon() const { return original_poly_; }
         const Polygon& GetPolygon() const { return poly_; }
 
-        static void Initialize();
         void CalcSelectionWeight();
         static double GetRegularShapePreference();
         void Move(const Vec2& v);
