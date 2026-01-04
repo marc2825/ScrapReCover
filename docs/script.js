@@ -11,7 +11,6 @@ function setLang(lang) {
         body.classList.remove('lang-jp');
     }
 
-    // Update button styling
     btns.forEach(btn => {
         if (btn.textContent.toLowerCase() === lang) {
             btn.classList.add('active');

@@ -1,0 +1,113 @@
+{
+    "seeds": {
+        "seed0": 0,
+        "seed1": 0
+    },
+
+    "ui_size": {
+        "window": {
+            "width": 1280,
+            "height": 720,
+            "title": "ScrapRecover v1.2"
+        },
+
+        "canvas_ui": {
+            "x": 10,
+            "y": 10,
+            "size": 500
+        },
+
+        "unplaced_ui": {
+            "x": 600,
+            "y": 10,
+            "width": 670,
+            "height": 500
+        },
+
+        "control_ui": {
+            "x": 10,
+            "y": 520,
+            "width": 1260,
+            "height": 190
+        }
+    },
+
+    "paths": {
+        "preset_outputs_roots": "../input_scraps/preset_outputs/",
+        "cropper_temp_dir": "../input_scraps/cropper_temp/",
+        "cropper_outputs_dir": "../input_scraps/cropper_outputs/",
+        "cropper_script_path": "../src/ui/measure_scrap/main.py",
+        "layout_exports_dir": "../LayoutExports/"
+    },
+
+    "generate_polygon": {
+        "count": 10,
+        "is_large": false,
+        "is_rectangle": true,
+        "v_min": 4,
+        "v_max": 10,
+        "r_mean": 15.0,
+        "r_var": 2.5,
+        "rect_large_min": 5.0,
+        "rect_large_max": 20.0,
+        "rect_small_min": 5.0,
+        "rect_small_max": 15.0,
+        "min_extent_large": 2.5,
+        "min_extent_small": 1.5
+    },
+
+    "font": {
+        "font_base": {
+            "size": 20,
+            "type": "resources/engine/font/NotoSans-SemiBold.ttf"
+        }
+    },
+
+    "unplaced_list": {
+        "icon_size": 200,
+        "margin": 20
+    },
+
+    "input": {
+        "placed_wheel_rotate_deg": 3.0,
+        "unplaced_scroll_step": 50
+    },
+
+    "button": {
+        "width": 150,
+        "height": 50,
+        "margin": 10
+    },
+
+    "canvas": {
+        "margin": 20,
+        "layout_size": 30,
+        "num_canvases": 3,
+        "max_polygons": 5000
+    },
+
+    "startup_cleanup": {
+        "measure_outputs": true,
+        "measure_temp": true
+    },
+
+    "hyperparameter": {
+        "maxiter": 30000,
+        "steps": 2000,
+        "P": [0.29, 0.30, 0.313, 0.081, 0.016],
+        "noP": [0.432, 0.447, 0.0, 0.121, 0.0],
+        "np_pen": 13600,
+        "or_pen": 250,
+        "ol_pen": 100,
+        "sttmp": 17500.0,
+        "entmp": 5.0
+    },
+
+    "polygon_config": {
+        "rect_similarity_calc_step": 1.0,
+        "texture_scale_divisor": 11.0,
+        "seam_allowance": 0.1
+    }
+
+
+}

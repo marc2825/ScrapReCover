@@ -68,11 +68,9 @@ p { margin-bottom: 15px; }
 /* Default: English visible, Japanese hidden */
 .jp-text { display: none; }
 
-/* When body has class 'lang-jp': Japanese visible, English hidden */
 body.lang-jp .en-text { display: none; }
 body.lang-jp .jp-text { display: block; }
 
-/* Inline text toggling */
 body.lang-jp span.en-text { display: none; }
 body.lang-jp span.jp-text { display: inline; }
 

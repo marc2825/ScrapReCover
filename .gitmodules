@@ -1,0 +1,6 @@
+[submodule "external/json"]
+	path = external/json
+	url = https://github.com/nlohmann/json.git
+[submodule "external/Siv3D"]
+	path = external/Siv3D
+	url = https://github.com/Siv3D/OpenSiv3D.git
