@@ -85,6 +85,7 @@ class Config {
         static inline int GetButtonHeight() { return config_data_["button"]["height"].get<int>(); }
         static inline int GetButtonMargin() { return config_data_["button"]["margin"].get<int>(); }
     
+        static int GetOptMaxIter();
         static inline int GetOptSteps() { return config_data_["hyperparameter"]["steps"].get<int>(); }
         static std::array<double, 5> GetHyperparameterP();
         static std::array<double, 5> GetHyperparameterNoP();

@@ -10,11 +10,12 @@
 
 
 void Main() {
-    CanvasModel &model = CanvasModel::Get();
-    UIManager ui(model);
-
     const std::string config_path = "../assets/config.json";
     Config::LoadConfig(config_path);
+
+    CanvasModel &model = CanvasModel::Get();
+    UIManager ui(model);
+    
     Hyperparameter::LoadFromConfig();
     model.GetRngOpt().seed(Config::GetSeed0());
     model.GetRngShapeGen().seed(Config::GetSeed1());

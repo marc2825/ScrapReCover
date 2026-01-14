@@ -75,6 +75,7 @@ void UIManager::InitializeModelState() {
     is_pattern_dialog_open_ = false;
     pattern_dialog_just_opened_ = false;
     scrap_load_mode_ = ScrapLoadMode::Preset;
+    model_.SetMaxIteration(Config::GetOptMaxIter());
     placed_wheel_rotate_rad_ = Config::GetPlacedWheelRotateRad();
     unplaced_scroll_ = Config::GetUnplacedScrollStep();
 }

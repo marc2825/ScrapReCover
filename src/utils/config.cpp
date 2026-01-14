@@ -335,6 +335,15 @@ double Config::GetGenMinExtentSmall() {
     return GetOr<double>(gen, "min_extent_small", kDefault);
 }
 
+int Config::GetOptMaxIter() {
+    static const int kDefault = 30000;
+    if (!config_data_.contains("hyperparameter")) {
+        return kDefault;
+    }
+    const auto &hp = config_data_["hyperparameter"];
+    return std::max(1, GetOr<int>(hp, "maxiter", kDefault));
+}
+
 std::array<double, 5> Config::GetHyperparameterP() {
     static const std::array<double, 5> kDefault = {0.29, 0.30, 0.313, 0.081, 0.016};
     if (!config_data_.contains("hyperparameter")) {

@@ -244,8 +244,8 @@ void UIManager::DrawRegularShapeSlider(int unplaced_ui_x, int unplaced_ui_width,
     constexpr int kResetButtonOffsetX = 255;
     constexpr int kResetButtonWidthPadding = 5;
     constexpr int kResetButtonHeightPadding = 15;
-    constexpr double kRegShapeMin = -10.0;
-    constexpr double kRegShapeMax = 50.0;
+    constexpr double kRegShapeMin = -2.0;
+    constexpr double kRegShapeMax = 20.0;
     const int slider_width = kSliderWidth;
     const int slider_value_width = slider_width - kSliderPadding;
     const int slider_label_width = kSliderLabelWidth + kSliderPadding;

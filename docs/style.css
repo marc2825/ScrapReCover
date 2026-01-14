@@ -131,6 +131,13 @@ img, video {
 .grid-item { text-align: center; }
 .grid-item p { font-size: 0.9em; margin-top: 8px; line-height: 1.4; }
 
+.special-thanks {
+    align-items: center;
+}
+.special-thanks img {
+    margin-bottom: 0;
+}
+
 /* --- Code Block --- */
 pre {
     background: #f4f4f4;
