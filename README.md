@@ -40,7 +40,7 @@ git submodule update --init --recursive
 3) Build and install Siv3D:
 ```bash
 cd external/Siv3D/Linux
-mkdir build && cd build
+mkdir -p build && cd build
 cmake -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 cd ..
 cmake --build build
@@ -49,16 +49,17 @@ sudo cmake --install build
 
 4) Build ScrapReCover:
 ```bash
-cd .. .. ..
-mkdir build && cd build
+cd ../../..
+rm -rf build && mkdir build && cd build
+cmake -GNinja -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
 cmake --build . -j1
 ```
 
 5) Install Python deps for the scrap measurement tool (`src/ui/measure_scrap`):
 ```bash
 sudo apt update
-sudo apt install -y python3 python3-pip python3-tk
-python3 -m pip install --user -r requirements.txt
+sudo apt install -y python3.10 python3-pip python3-tk
+python3 -m pip install --user -r ../requirements.txt
 ```
 
 ### Run ScrapReCover
